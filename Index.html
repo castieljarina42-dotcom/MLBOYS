@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My School Projects</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    color: white;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px;
+    background: rgba(0, 0, 0, 0.92);
+    border-bottom: 1px solid #00aaff;
+    box-shadow: 0 0 15px #008cff;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: #00aaff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+    text-shadow: 0 0 10px #00aaff;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+
+    background:
+        radial-gradient(circle at center, #002b4d 0%, #00101c 30%, #000 70%);
+}
+
+.hero h1 {
+    font-size: 60px;
+    color: #00aaff;
+    text-shadow:
+        0 0 10px #008cff,
+        0 0 25px #008cff,
+        0 0 50px #008cff;
+}
+
+.hero p {
+    margin-top: 20px;
+    color: #ccc;
+    font-size: 20px;
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+    padding: 90px 8%;
+}
+
+.title {
+    text-align: center;
+    color: #00aaff;
+    font-size: 40px;
+    margin-bottom: 50px;
+    text-shadow:
+        0 0 10px #008cff,
+        0 0 25px #008cff;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #050505;
+    border: 1px solid #008cff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 140, 255, 0.4);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 0 15px #008cff,
+        0 0 35px rgba(0, 140, 255, 0.5);
+}
+
+.card-media {
+    width: 100%;
+    height: 210px;
+    background: #00111f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-media img,
+.card-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeholder {
+    font-size: 75px;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card h3 {
+    color: #00aaff;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.card p {
+    color: #bbb;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #00aaff;
+    border-radius: 8px;
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #00aaff;
+    color: #000;
+    box-shadow: 0 0 20px #00aaff;
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.about p {
+    color: #bbb;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* ================= TEAM ================= */
+
+.team {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.member {
+    width: 250px;
+    padding: 30px 20px;
+    text-align: center;
+
+    background: #050505;
+    border: 1px solid #008cff;
+    border-radius: 15px;
+
+    box-shadow: 0 0 15px rgba(0, 140, 255, 0.3);
+    transition: 0.3s;
+}
+
+.member:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px #008cff;
+}
+
+.member h3 {
+    color: #00aaff;
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.member p {
+    color: #aaa;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #008cff;
+    color: #777;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    nav a {
+        margin: 0 7px;
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    section {
+        padding: 70px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+    <a href="#home">HOME</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#about">ABOUT</a>
+    <a href="#team">TEAM</a>
+</nav>
+
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+    <div>
+
+        <h1>MY SCHOOL PROJECTS</h1>
+
+        <p>
+            A collection of projects created during the school year.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <h2 class="title">MY PROJECTS</h2>
+
+    <div class="projects">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="card">
+
+            <div class="card-media">
+
+                <div class="placeholder">
+                    🍔
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>
+                    Sanji's Yum Yum Burger
+                </h3>
+
+                <p>
+                    A creative burger advertisement inspired by
+                    Sanji from One Piece. It features the burger,
+                    opening hours, ordering information, and a
+                    Devil Fruit promotion.
+                </p>
+
+                <a
+                    class="btn"
+                    href="SANJI'S YUM YUM BURGER (1).pdf"
+                    target="_blank"
+                >
+                    VIEW PROJECT
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="card">
+
+            <div class="card-media">
+
+                <div class="placeholder">
+                    🎨
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>
+                    Untitled Design
+                </h3>
+
+                <p>
+                    A creative visual design project created
+                    during the school year.
+                </p>
+
+                <a
+                    class="btn"
+                    href="Untitled design.pdf"
+                    target="_blank"
+                >
+                    VIEW PROJECT
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 3 - YOUTUBE VIDEO -->
+
+        <div class="card">
+
+            <div class="card-media">
+
+                <a
+                    href="https://www.youtube.com/watch?v=PyQ81blsi9A"
+                    target="_blank"
+                    style="
+                        width:100%;
+                        height:100%;
+                        position:relative;
+                        display:block;
+                    "
+                >
+
+                    <img
+                        src="https://img.youtube.com/vi/PyQ81blsi9A/maxresdefault.jpg"
+                        alt="YouTube Project"
+                        style="
+                            width:100%;
+                            height:100%;
+                            object-fit:cover;
+                        "
+                    >
+
+                    <div
+                        style="
+                            position:absolute;
+                            top:50%;
+                            left:50%;
+                            transform:translate(-50%,-50%);
+                            width:70px;
+                            height:70px;
+                            border-radius:50%;
+                            background:#00aaff;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            color:#000;
+                            font-size:30px;
+                            box-shadow:0 0 30px #00aaff;
+                        "
+                    >
+                        ▶
+                    </div>
+
+                </a>
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>
+                    Video Project
+                </h3>
+
+                <p>
+                    A video project created as part of our
+                    school activities.
+                </p>
+
+                <a
+                    class="btn"
+                    href="https://www.youtube.com/watch?v=PyQ81blsi9A"
+                    target="_blank"
+                >
+                    WATCH VIDEO
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 4 -->
+
+        <div class="card">
+
+            <div class="card-media">
+
+                <div class="placeholder">
+                    💻
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>
+                    More Projects
+                </h3>
+
+                <p>
+                    More school projects and activities can
+                    be added here throughout the school year.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 5 - FINAL VIDEO -->
+
+        <div class="card">
+
+            <div class="card-media">
+
+                <video
+                    controls
+                    preload="metadata"
+                >
+
+                    <source
+                        src="last-project.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support video.
+
+                </video>
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>
+                    Final School Project
+                </h3>
+
+                <p>
+                    Our latest school project video created
+                    during the school year.
+                </p>
+
+                <a
+                    class="btn"
+                    href="last-project.mp4"
+                    target="_blank"
+                >
+                    OPEN VIDEO
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <h2 class="title">
+        ABOUT THIS WEBSITE
+    </h2>
+
+    <div class="about">
+
+        <p>
+            This website contains a collection of our school
+            projects created during the school year. It includes
+            designs, advertisements, videos, and other multimedia
+            projects created by our group.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TEAM ================= -->
+
+<section id="team">
+
+    <h2 class="title">
+        OUR TEAM
+    </h2>
+
+    <div class="team">
+
+
+        <!-- CASTIEL -->
+
+        <div class="member">
+
+            <h3>
+                Castiel Francis O. Jarina
+            </h3>
+
+            <p>
+                The Group Leader
+            </p>
+
+        </div>
+
+
+        <!-- BEN -->
+
+        <div class="member">
+
+            <h3>
+                Ben Jason T. Dejino
+            </h3>
+
+            <p>
+                The Project Gatherer
+            </p>
+
+        </div>
+
+
+        <!-- ADOLF -->
+
+        <div class="member">
+
+            <h3>
+                Adolf Ace E. Gilay
+            </h3>
+
+            <p>
+                The Coder
+            </p>
+
+        </div>
+
+
+        <!-- ZEGFROYD -->
+
+        <div class="member">
+
+            <h3>
+                Zegfroyd Joseph A. Sebucao
+            </h3>
+
+            <p>
+                The Planner
+            </p>
+
+        </div>
+
+
+        <!-- THEOFRANZ -->
+
+        <div class="member">
+
+            <h3>
+                Theofranz L. Calunsag Jr.
+            </h3>
+
+            <p>
+                The Designer
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 My School Projects
+    <br>
+    Created by Castiel & Team
+
+</footer>
+
+
+</body>
+</html>
